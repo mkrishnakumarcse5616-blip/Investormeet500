@@ -1,44 +1,41 @@
-# [Project name]
-
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+# Investor Meet 500
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/investor-meet-500 run dev` — run the website
+- `pnpm --filter @workspace/investor-meet-500 run typecheck` — check website types
 
 ## Stack
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- pnpm workspace, React, Vite, TypeScript, Wouter
+- Tailwind CSS and local project stylesheet
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/investor-meet-500/src/App.tsx` — public page routes
+- `artifacts/investor-meet-500/src/components/SiteShell.tsx` — shared navigation and footer
+- `artifacts/investor-meet-500/src/pages/Pages.tsx` — public pages and browser-local forms
+- `artifacts/investor-meet-500/src/data/content.ts` — event details, tracks, speakers, and schedule
+- `artifacts/investor-meet-500/public/images/` — locally bundled photography
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Participant and consultation forms save drafts in the visitor's browser; they are not sent to organizers.
+- The public site does not use a database or claim that an application has been received.
+- Event details must remain marked unannounced until the owner confirms them.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+The site introduces Investor Meet 500 and its five investment tracks, guides startups, investors, and sponsors, and provides programme, venue, global-opportunity, women-entrepreneur, and consultation information.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- Use the supplied reference image and source photography as visual guidance.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Do not present the event date, venue, speakers, partner identities, or participation terms as confirmed unless the owner supplies confirmation.
+- Keep the browser-only draft notice visible anywhere a form can be saved.
 
 ## Pointers
 

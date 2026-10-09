@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Investor Meet 500"
+description = "A responsive public website for a one-day investment summit, connecting startups, investors, and sponsors with funding opportunities, programme details, and event guidance."
+version = "1.0.0"
+id = "artifacts/investor-meet-500"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23667
+
+[services.development]
+run = "pnpm --filter @workspace/investor-meet-500 run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/investor-meet-500", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/investor-meet-500/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23667"
+BASE_PATH = "/"
