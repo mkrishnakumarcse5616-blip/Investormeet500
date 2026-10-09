@@ -1,0 +1,227 @@
+[08/10, 10:41 am] +91 99622 53522: A. Chennai — Industrialists, Manufacturing & Major Business Groups
+No.	Entrepreneur / Business Leader	Company / Group
+1	Venu Srinivasan	TVS Motor
+2	Sudarshan Venu	TVS Motor
+3	R. Dinesh	TVS Supply Chain Solutions
+4	Gopal Srinivasan	TVS Capital Funds
+5	Mallika Srinivasan	TAFE
+6	Lakshmi Venu	Sundaram-Clayton
+7	M. M. Murugappan	Murugappa Group
+8	M. A. M. Arunachalam	Murugappa Group
+9	Arun Murugappan	Murugappa Group
+10	Vellayan Subbiah	Cholamandalam / Murugappa
+11	P. R. Venketrama Raja	Ramco Group
+12	N. Srinivasan	India Cements
+13	N. Sankar	Sanmar Group
+14	Vijay Sankar	Sanmar Group
+15	A. C. Muthiah	SPIC / MAC Group
+16	Ashwin Muthiah	AM International
+17	R. G. Chandramogan	Hatsun Agro
+18	R. G. Arun	Hatsun Agro
+19	C. K. Ranganathan	CavinKare
+20	T. T. Jagannathan	TTK Group
+21	T. T. Raghunathan	TTK Group
+22	Rahul Mammen Mappillai	MRF
+23	Kalanithi Maran	Sun Group
+24	Kavery Kalanithi	Sun Group
+25	R. Thyagarajan	Shriram Group
+B. Chennai — Technology, Startups & Digital Business
+No.	Entrepreneur / Business Leader	Company
+26	Sridhar Vembu	Zoho
+27	Radha Vembu	Zoho
+28	Sekar Vembu	Zoho
+29	Kumar Vembu	GoFrugal / Zoho
+30	Girish Mathrubootham	Freshworks
+31	Shan Krishnasamy	Freshworks
+32	Suresh Sambandam	Kissflow
+33	Murugavel Janakiraman	Matrimony.com
+34	Krish Subramanian	Chargebee
+35	Rajaraman Santhanam	Chargebee
+36	Saravana Kumar	Kovai.co
+37	Arun Jain	Intellect Design Arena
+38	B. K. Syngal	Sify Technologies
+39	Karthik Jayaraman	WayCool
+40	Sanjay Dasari	WayCool
+41	Gaurav Kumar	Yubi
+42	Satyam Kumar	Yubi
+43	M. R. Rangaswami	Indiaspora / Sand Hill Group
+44	Amitabh Satyam	Smart Transformations
+45	Umesh Sachdev	Uniphore
+46	Ravi Saraogi	Uniphore
+47	Srinath Ravichandran	Agnikul Cosmos
+48	Moin SPM	Agnikul Cosmos
+49	Agnishwar Jayaprakash	Garuda Aerospace
+50	V. S. S. Mani	Justdial
+C. Coimbatore — Industrialists & Entrepreneurs
+No.	Entrepreneur / Business Leader	Company / Group
+51	K. P. Ramasamy	KPR Mill
+52	K. P. D. Sigamani	KPR Mill
+53	P. Nataraj	KPR Mill
+54	G. Soundararajan	Suguna Foods
+55	B. Soundararajan	Suguna Foods
+56	M. Manickam	Sakthi Group
+57	M. Srinivasan	Sakthi Group
+58	Vanitha Mohan	Pricol
+59	Vikram Mohan	Pricol
+60	Jairam Varadaraj	Elgi Equipments
+61	Jayaram Varadaraj	Elgi Group
+62	Ravi Sam	Lakshmi Machine Works
+63	G. K. Sundaram	Lakshmi Mills
+64	Rajshree Pathy	Rajshree Sugars
+65	Nalla G. Palaniswami	KMCH
+66	G. Bakthavathsalam	KG Hospital
+67	K. Easwaran	Sakthi Gear Products
+68	K. Shanmuga Sundaram	Sakthi Gear Products
+69	K. G. Balakrishnan	KG Group
+70	S. K. M. Maeilanandhan	SKM Group
+Coimbatore is a major engineering, textile, pump and industrial manufacturing centre. Selected company and founder associations are documented by KPR Mill, Suguna, and Sakthi Gear Products. 
+
+KPR Mill
++3
+
+
+
+D. Tiruppur, Erode, Salem & Western Tamil Nadu
+No.	Entrepreneur / Business Leader	Company / Group
+71	K. R. Nagarajan	Ramraj Cotton
+72	A. Sakthivel	Poppys Knitwear
+73	T. K. Chandiran	The Chennai Silks
+74	K. M. Subramanian	Tiruppur Exporters Association / Textile Business
+75	P. S. Sundaram	Pothys
+76	V. R. Muthu	Idhayam
+77	S. K. M. Siddha	SKM Group
+78	C. K. Kumaravel	Naturals Salon
+79	Veena Kumaravel	Naturals Salon
+80	Arunachalam Muruganantham	Jayashree Industries
+E. Madurai, Sivakasi, Trichy & Southern Tamil Nadu
+No.	Entrepreneur / Business Leader	Company / Group
+81	A. D. Padmasingh Isaac	Aachi Group
+82	Prathap C. Reddy	Apollo Hospitals
+83	Preetha Reddy	Apollo Hospitals
+84	Suneeta Reddy	Apollo Hospitals
+85	Shobana Kamineni	Apollo Hospitals
+86	Sangita Reddy	Apollo Hospitals
+87	P. R. Ramasubrahmaneya Rajha	Ramco Group
+88	Nalli Kuppuswami Chetti	Nalli Silks
+89	K. M. Mammen Mappillai	MRF
+90	T. V. Sundram Iyengar	TVS Group
+F. Other Tamil Nadu Business Founders & Leaders
+No.	Entrepreneur / Business Leader	Company / Group
+91	Shiv Nadar	HCL
+92	Roshni Nadar Malhotra	HCL
+93	M. G. Muthu	MGM Group
+94	V. G. Santhosam	VGP Group
+95	H. Vijay Vasanth	Vasanth & Co
+96	P. C. Duraisamy	Sakthi Masala
+97	Shanthi Duraisamy	Sakthi Masala
+98	M. P. Purushothaman	Empee Group
+99	P. Subramanian	Shanthi Gears
+100	Karumuttu T. Kannan	Thiagarajar Group
+[08/10, 10:42 am] +91 99622 53522: 1–25: Major Industrialists & Business Groups
+No.	Entrepreneur / Leader	Company / Group
+1	Shiv Nadar	HCL
+2	Venu Srinivasan	TVS Motor
+3	Mallika Srinivasan	TAFE
+4	Kalanithi Maran	Sun Group
+5	R. G. Chandramogan	Hatsun Agro
+6	Sridhar Vembu	Zoho
+7	Prathap C. Reddy	Apollo Hospitals
+8	N. Srinivasan	India Cements
+9	A. C. Muthiah	SPIC
+10	M. M. Murugappan	Murugappa Group
+11	A. Vellayan	Murugappa Group
+12	C. K. Ranganathan	CavinKare
+13	K. P. Ramasamy	KPR Mill
+14	P. R. Venketrama Raja	Ramco Group
+15	P. R. Ramasubrahmaneya Rajha	Ramco Group
+16	B. N. Kalyani	Kalyani Group
+17	T. T. Jagannathan	TTK Group
+18	N. Kumar	Sanmar Group
+19	Vijay Sankar	Sanmar Group
+20	R. Thyagarajan	Shriram Group
+21	G. R. Karthikeyan	PSG Group
+22	Rajshree Pathy	Rajshree Sugars
+23	Vanitha Mohan	Pricol
+24	Vijay Mohan	Pricol
+25	L. G. Varadaraj	Elgi Equipments
+26–50: Technology, Startups & Digital Businesses
+No.	Entrepreneur / Leader	Company / Group
+26	Girish Mathrubootham	Freshworks
+27	Shan Krishnasamy	Freshworks
+28	Suresh Sambandam	Kissflow
+29	Murugavel Janakiraman	Matrimony.com
+30	Krish Subramanian	Chargebee
+31	Rajaraman Santhanam	Chargebee
+32	Saravana Kumar	Kovai.co
+33	Aravind Srinivas	Perplexity AI
+34	Karthik Jayaraman	WayCool
+35	Sanjay Dasari	WayCool
+36	Vembu Subramanian	Gofrugal
+37	Ashok Soota	Happiest Minds
+38	Arun Jain	Intellect Design Arena
+39	S. Ramadorai	TCS
+40	N. Chandrasekaran	Tata Group
+41	C. Vijayakumar	HCLTech
+42	Jay Vijayan	Tekion
+43	Kumar Vembu	GoFrugal / Zoho
+44	D. S. Ravishankar	Brickwork Ratings
+45	Gopal Srinivasan	TVS Capital Funds
+46	K. Ganesh	GrowthStory
+47	Meena Ganesh	Portea Medical
+48	R. Narayanan	The Chennai Angels
+49	Lakshmi Narayanan	Cognizant
+50	S. D. Shibulal	Infosys
+51–75: Retail, Textiles, Food & Consumer Brands
+No.	Entrepreneur / Leader	Company / Group
+51	Nalli Kuppuswami Chetti	Nalli Silks
+52	T. K. Chandiran	The Chennai Silks
+53	P. S. Sundaram	Pothys
+54	K. R. Nagarajan	Ramraj Cotton
+55	A. D. Padmasingh Isaac	Aachi Group
+56	C. K. Kumaravel	Naturals Salon
+57	Veena Kumaravel	Naturals Salon
+58	V. R. Muthu	Idhayam
+59	M. P. Purushothaman	Empee Group
+60	H. Vasanthakumar	Vasanth & Co
+61	H. Vijay Vasanth	Vasanth & Co
+62	P. Rajagopal	Saravana Bhavan
+63	M. G. Muthu	MGM Group
+64	V. G. Panneerdas	VGP Group
+65	V. G. Santhosam	VGP Group
+66	V. G. Selvaraj	VGP Group
+67	C. K. Rajkumar	Sujatha Biotech
+68	C. K. Ashok Kumar	Consumer products
+69	Arunachalam Muruganantham	Jayashree Industries
+70	K. P. Kandasamy	Dinakaran
+71	S. P. Adithanar	Dina Thanthi
+72	Sivanthi Adithan	Dina Thanthi
+73	K. P. P. Baskar	KPR Group
+74	M. A. M. Ramaswamy	Chettinad Group
+75	Karumuttu T. Kannan	Thiagarajar Group
+76–100: Manufacturing, Healthcare, Engineering & Regional Business Leaders
+No.	Entrepreneur / Leader	Company / Group
+76	G. D. Naidu	UMS / Engineering
+77	N. Mahalingam	Sakthi Group
+78	M. Manickam	Sakthi Group
+79	M. Srinivasan	Sakthi Group
+80	S. K. M. Maeilanandhan	SKM Group
+81	P. D. G. K. Rajan	Suguna Foods
+82	G. B. Sundararajan	Suguna Foods
+83	G. B. Soundararajan	Suguna Foods
+84	G. K. Devarajulu	Lakshmi Machine Works
+85	G. K. Sundaram	Lakshmi Mills
+86	G. Kuppuswamy Naidu	Lakshmi Mills
+87	P. S. Govindaswamy Naidu	PSG Group
+88	D. Balasundaram Naidu	Textool
+89	L. G. Balakrishnan	LGB Group
+90	K. G. Bakthavathsalam	KG Hospital
+91	G. Bakthavathsalam	KG Hospital
+92	P. C. Reddy	Apollo Hospitals
+93	Suneeta Reddy	Apollo Hospitals
+94	Shobana Kamineni	Apollo Hospitals
+95	Preetha Reddy	Apollo Hospitals
+96	Sangita Reddy	Apollo Hospitals
+97	Rahul Mammen Mappillai	MRF
+98	K. M. Mammen	MRF
+99	B. S. Abdur Rahman	B. S. Abdur Rahman Group
+100	Palani G. Periasamy	PGP Group
