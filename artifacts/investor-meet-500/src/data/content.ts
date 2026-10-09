@@ -1,7 +1,7 @@
 export const navigation = [
   { label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'Tracks', href: '/tracks' },
   { label: 'Startups', href: '/startups' }, { label: 'Investors', href: '/investors' }, { label: 'Sponsors', href: '/sponsors' },
-  { label: 'Partners', href: '/partners' }, { label: 'Speakers', href: '/speakers' },
+  { label: 'Partners', href: '/partners' }, { label: 'Leaders', href: '/speakers' },
   { label: 'Schedule', href: '/schedule' }, { label: 'Venue', href: '/venue' },
   { label: 'Women entrepreneurs', href: '/women-entrepreneurs' }, { label: 'Global opportunities', href: '/global-opportunities' },
   { label: 'Consultation', href: '/consultation' },

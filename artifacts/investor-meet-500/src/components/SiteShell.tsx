@@ -11,7 +11,7 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   '/investors': { title: 'For Investors — Investor Meet 500', description: 'Discover how investors, banks and financial institutions can meet growing businesses across five structured funding and expansion tracks.' },
   '/sponsors': { title: 'Sponsorship — Investor Meet 500', description: 'Review six published sponsorship tiers and explore branding, digital visibility and event participation opportunities at Investor Meet 500.' },
   '/partners': { title: 'Partners — Investor Meet 500', description: 'Explore partnership categories for corporate, government, banking, technology, media and industry organizations at Investor Meet 500.' },
-  '/speakers': { title: 'Speakers — Investor Meet 500', description: 'Explore the Investor Meet 500 speaker directory by business category. Speaker names and bookings will be added after confirmation.' },
+  '/speakers': { title: 'Business Leader Directory — Investor Meet 500', description: 'Browse a 100-entry user-supplied reference directory of Tamil Nadu business leaders by name, company, region and sector. Entries do not indicate event attendance or speaker bookings.' },
   '/women-entrepreneurs': { title: 'Women Entrepreneurs — Investor Meet 500', description: 'Explore business growth and investment pathways for women-led companies across distribution, manufacturing, brands and technology services.' },
   '/global-opportunities': { title: 'Global Opportunities — Investor Meet 500', description: 'Connect Tamil Nadu with international investors, global companies, fund-level opportunities and strategic alliances through Investor Meet 500.' },
   '/consultation': { title: 'Guidance & Consultation — Investor Meet 500', description: 'Prepare for your next business step with first-level guidance on pitch decks, financial plans, project areas and investment processes.' },
@@ -137,7 +137,7 @@ export function SiteFooter() {
   const groups = [
     { title: 'The summit', links: [['About', '/about'], ['Tracks', '/tracks'], ['Schedule', '/schedule'], ['Venue', '/venue']] },
     { title: 'Participate', links: [['Startups', '/startups'], ['Investors', '/investors'], ['Sponsors', '/sponsors'], ['Partners', '/partners']] },
-    { title: 'Discover', links: [['Speakers', '/speakers'], ['Women entrepreneurs', '/women-entrepreneurs'], ['Global opportunities', '/global-opportunities'], ['Consultation', '/consultation']] },
+    { title: 'Discover', links: [['Business leaders', '/speakers'], ['Women entrepreneurs', '/women-entrepreneurs'], ['Global opportunities', '/global-opportunities'], ['Consultation', '/consultation']] },
     { title: 'Legal', links: [['Terms', '/about#event-policies'], ['Privacy', '/about#event-policies'], ['Payment / refund policy', '/about#event-policies']] },
   ];
   return <footer className="im-footer">

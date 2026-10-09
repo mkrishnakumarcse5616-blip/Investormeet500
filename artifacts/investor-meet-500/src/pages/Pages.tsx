@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState, type FormEvent } from 'react';
 import { Link } from 'wouter';
 import { ArrowRight, Check, ChevronLeft, ChevronRight, Globe2 } from 'lucide-react';
 import { CTA, PageHero, SectionHeading } from '@/components/SiteShell';
-import { partnerCategories, participantGroups, schedule, speakers, speakerCategories, sponsorTiers, statistics, tracks } from '@/data/content';
+import { partnerCategories, participantGroups, schedule, sponsorTiers, statistics, tracks } from '@/data/content';
+import { businessLeaderRegions, businessLeaders, featuredBusinessLeaderIds } from '@/data/business-leaders';
 
 const APPLICATION_DRAFT_KEY = 'investor-meet-500-application-draft';
 const CONSULTATION_DRAFT_KEY = 'investor-meet-500-consultation-draft';
@@ -63,6 +64,9 @@ export function HomePage() {
     if (homeHall === 'Hall 3') return ['Halls 1–3', 'All halls'].includes(item.hall);
     return ['Financial area'].includes(item.hall);
   }), [homeHall]);
+  const featuredLeaders = featuredBusinessLeaderIds
+    .map(id => businessLeaders.find(leader => leader.id === id))
+    .filter((leader): leader is (typeof businessLeaders)[number] => Boolean(leader));
   return <>
     <section className="im-hero"><div className="im-container im-hero-inner"><div className="hero-copy">
       <p className="hero-kicker">An investment summit with purpose</p>
@@ -72,6 +76,17 @@ export function HomePage() {
       <p className="hero-meta">Event date <strong>To be announced</strong><span aria-hidden="true">·</span> Venue <strong>To be announced</strong></p>
     </div></div><span className="hero-index">ONE DAY · FIVE TRACKS · 500 PARTICIPANTS</span></section>
     <StatsBand />
+    <section className="section leaders-featured"><div className="im-container">
+      <div className="leaders-featured-heading">
+        <div><span className="eyebrow">Business leader directory</span><h2 className="section-title">A view of Tamil Nadu’s <em>business landscape.</em></h2><p className="section-lead">Explore a reference list of notable business leaders and the companies associated with their names.</p></div>
+        <Link href="/speakers" className="im-btn outline" data-testid="link-home-business-leaders">Explore all 100 leaders <ArrowRight size={14} /></Link>
+      </div>
+      <div className="leader-feature-grid">{featuredLeaders.map((leader, index) => <article className="leader-feature-card" key={leader.id} data-testid={`card-featured-leader-${leader.id}`}>
+        <span className="leader-index">0{index + 1}</span><span className="leader-initials" aria-hidden="true">{leader.initials}</span>
+        <div><h3>{leader.name}</h3><p>{leader.company}</p><span className="leader-region">{leader.region}</span></div>
+      </article>)}</div>
+      <p className="leader-disclaimer">Reference list supplied by the user; names and company associations should be independently verified before publication. Listing does not indicate confirmed event attendance or a speaker booking.</p>
+    </div></section>
     <section className="section"><div className="im-container split">
       <div className="editorial-image"><img src="/images/about-audience.jpg" alt="Founders and investors gathered in a conference hall" loading="lazy" /><span className="image-caption">A working floor for capital and ambition</span></div>
       <div><SectionHeading eyebrow="The summit" title={<>A room built for capital to meet <em>ambition.</em></>} lead="Investor Meet 500 is a premium platform connecting startups, entrepreneurs, banks and investors to create meaningful partnerships, drive innovation and accelerate growth." />
@@ -103,10 +118,6 @@ export function HomePage() {
         <div className="hero-actions"><Link href="/apply" className="im-btn" data-testid="link-home-final-apply">Apply to pitch <ArrowRight size={14}/></Link><Link href="/investors" className="im-btn outline" data-testid="link-home-final-investor">For investors</Link><Link href="/sponsors" className="im-btn outline" data-testid="link-home-final-sponsor">Sponsor the summit</Link></div>
       </div>
       <div><span className="eyebrow">Case-study references</span><div className="mini-case-grid">{['TNSI 2024','Startup TN','TE Chennai','The Chennai Angels'].map((name,index)=><article className="mini-case" key={name}><strong>{name}</strong><span>Reference {String(index+1).padStart(2,'0')}</span></article>)}</div><p className="form-notice">Names shown as case-study references only; no affiliation, endorsement or participation at Investor Meet 500 is implied.</p></div>
-    </div></section>
-    <section className="section paper"><div className="im-container"><SectionHeading eyebrow="Speaker directory" title={<>Ideas from across the <em>business landscape.</em></>} lead="No speaker bookings have been confirmed. Names and affiliations will be added only after confirmation." />
-      <div className="home-speaker-strip">{speakers.slice(0,4).map((speaker,index)=><article className="home-speaker" key={speaker.category}><b>0{index+1}</b><strong>Announcement pending</strong><span>{speaker.category} · speaker to be confirmed</span></article>)}</div>
-      <Link href="/speakers" className="text-link" data-testid="link-home-speakers">Browse speaker directory <ArrowRight size={14}/></Link>
     </div></section>
     <section className="section"><div className="im-container home-women"><div className="home-women-copy"><span className="eyebrow">Women entrepreneurs</span><h2 className="section-title">Ambition deserves <em>room to grow.</em></h2><p className="section-lead">An open invitation to women-led businesses across manufacturing, distribution, technology and services to explore relevant capital pathways.</p><Link href="/women-entrepreneurs" className="im-btn" data-testid="link-home-women">Explore opportunities <ArrowRight size={14}/></Link></div></div></section>
     <section className="section global-band"><div className="im-container"><SectionHeading eyebrow="Global opportunities" title={<>Tamil Nadu, in conversation <em>with the world.</em></>} lead="A proposed platform for globally minded companies and institutions to explore connections. International participants and affiliations are not yet confirmed." />
@@ -221,17 +232,47 @@ export function PartnersPage() {
 }
 
 export function SpeakersPage() {
-  const [category, setCategory] = useState('All');
+  const [region, setRegion] = useState<(typeof businessLeaderRegions)[number]>('All regions');
+  const [sector, setSector] = useState('All sectors');
   const [query, setQuery] = useState('');
-  const filtered = useMemo(() => speakers.filter(speaker => (category === 'All' || speaker.category === category) && `${speaker.name} ${speaker.title} ${speaker.category}`.toLowerCase().includes(query.toLowerCase())), [category, query]);
+  const [page, setPage] = useState(1);
+  const pageSize = 12;
+  const sectors = useMemo(() => ['All sectors', ...Array.from(new Set(businessLeaders.map(leader => leader.sector)))], []);
+  const filtered = useMemo(() => {
+    const term = query.trim().toLowerCase();
+    return businessLeaders.filter(leader =>
+      (region === 'All regions' || leader.region === region) &&
+      (sector === 'All sectors' || leader.sector === sector) &&
+      (!term || `${leader.name} ${leader.company} ${leader.region} ${leader.sector}`.toLowerCase().includes(term)),
+    );
+  }, [region, sector, query]);
+  const pageCount = Math.max(1, Math.ceil(filtered.length / pageSize));
+  const visibleLeaders = filtered.slice((page - 1) * pageSize, page * pageSize);
+  const changeRegion = (value: (typeof businessLeaderRegions)[number]) => { setRegion(value); setPage(1); };
+  const changeSector = (value: string) => { setSector(value); setPage(1); };
+  const changeQuery = (value: string) => { setQuery(value); setPage(1); };
   return <>
-    <PageHero eyebrow="Speakers" title={<>Ideas and experience for the <em>next decision.</em></>} lead="The summit programme will bring together people shaping investment, industry and entrepreneurship. Speaker announcements will appear here when confirmed." />
-    <section className="section"><div className="im-container"><SectionHeading eyebrow="Speaker directory" title={<>Voices from across the <em>investment landscape.</em></>} lead="No speaker bookings have been confirmed. This directory uses clear announcement placeholders rather than invented names or affiliations." />
-      <label className="speaker-search"><span className="sr-only">Search speakers</span><input className="search-input" value={query} onChange={event => setQuery(event.target.value)} placeholder="Search category or expertise" aria-label="Search speakers" data-testid="input-speaker-search" /></label>
-      <div className="speaker-filter" role="group" aria-label="Filter speakers">{speakerCategories.map(item => <button type="button" key={item} className="filter-chip" aria-pressed={category === item} onClick={() => setCategory(item)} data-testid={`filter-speaker-${item.toLowerCase().replaceAll(' ','-')}`}>{item}</button>)}</div>
-      <div className="card-grid">{filtered.map((speaker, index) => <article className="speaker-card" key={`${speaker.category}-${index}`}><div className="speaker-avatar" aria-hidden="true">{speaker.initials}</div><div><span className="badge">{speaker.category}</span><h3>{speaker.name}</h3><p>{speaker.title} · {speaker.company}</p><p>Location: To be announced</p></div></article>)}</div>
-      {filtered.length === 0 && <p className="notice">No speaker placeholders match that search. Try another category.</p>}
-    </div></section><CTA title="Interested in joining the programme?" href="/consultation" label="Register your interest" />
+    <PageHero eyebrow="Business leaders" title={<>The people behind <em>the business landscape.</em></>} lead="Browse a reference directory of 100 Tamil Nadu business leaders by name, company, region and sector. This is not a speaker roster." />
+    <section className="section"><div className="im-container">
+      <SectionHeading eyebrow="Business leader directory" title={<>A broad view of <em>business leadership.</em></>} lead="Search all 100 entries or narrow the list by region and sector. Cards use initials only; no verified portraits were supplied." />
+      <div className="leader-disclaimer" role="note" data-testid="text-leader-disclaimer">The names and company associations below are a user-supplied reference list and should be verified before publication. Inclusion does not indicate confirmed event attendance, participation, or a speaker booking.</div>
+      <div className="leader-controls">
+        <label className="leader-search"><span className="sr-only">Search business leaders</span><input className="search-input" value={query} onChange={event => changeQuery(event.target.value)} placeholder="Search name, company, region or sector" aria-label="Search business leaders" data-testid="input-leader-search" /></label>
+        <label className="leader-select-label"><span>Region</span><select className="form-select" value={region} onChange={event => changeRegion(event.target.value as (typeof businessLeaderRegions)[number])} aria-label="Filter by region" data-testid="select-leader-region">{businessLeaderRegions.map(item => <option key={item} value={item}>{item}</option>)}</select></label>
+        <label className="leader-select-label"><span>Sector</span><select className="form-select" value={sector} onChange={event => changeSector(event.target.value)} aria-label="Filter by sector" data-testid="select-leader-sector">{sectors.map(item => <option key={item} value={item}>{item}</option>)}</select></label>
+      </div>
+      <div className="leader-results-meta" aria-live="polite" data-testid="text-leader-results">{filtered.length} {filtered.length === 1 ? 'leader' : 'leaders'} <span>·</span> Page {Math.min(page, pageCount)} of {pageCount}</div>
+      {visibleLeaders.length > 0 ? <div className="leader-directory-grid">{visibleLeaders.map(leader => <article className="leader-card" key={leader.id} data-testid={`card-business-leader-${leader.id}`}>
+        <div className="leader-card-top"><span className="leader-avatar" aria-label={`Initials ${leader.initials}`}>{leader.initials}</span><span className="leader-card-region">{leader.region}</span></div>
+        <div className="leader-card-content"><span className="leader-card-sector">{leader.sector}</span><h3>{leader.name}</h3><p>{leader.company}</p><span className="leader-reference">Reference entry · not an event booking</span></div>
+      </article>)}</div> : <div className="leader-empty" data-testid="empty-leader-results"><span className="eyebrow">No matches</span><h3>Try a broader search.</h3><p>There are no leaders matching those filters. Clear the search or choose a different region or sector.</p><button type="button" className="im-btn outline" onClick={() => { changeQuery(''); changeRegion('All regions'); changeSector('All sectors'); }} data-testid="button-clear-leader-filters">Clear filters</button></div>}
+      <nav className="leader-pagination" aria-label="Business leader directory pages">
+        <button type="button" className="page-button" disabled={page <= 1} onClick={() => setPage(current => Math.max(1, current - 1))} aria-label="Previous page" data-testid="button-leader-page-previous"><ChevronLeft size={16} /><span>Previous</span></button>
+        <div className="page-count" aria-label={`Page ${page} of ${pageCount}`}>{Array.from({ length: pageCount }, (_, index) => index + 1).map(pageNumber => <button type="button" key={pageNumber} className="page-number" aria-current={pageNumber === page ? 'page' : undefined} onClick={() => setPage(pageNumber)} data-testid={`button-leader-page-${pageNumber}`}>{String(pageNumber).padStart(2, '0')}</button>)}</div>
+        <button type="button" className="page-button" disabled={page >= pageCount} onClick={() => setPage(current => Math.min(pageCount, current + 1))} aria-label="Next page" data-testid="button-leader-page-next"><span>Next</span><ChevronRight size={16} /></button>
+      </nav>
+    </div></section>
+    <CTA title="Interested in joining the programme?" href="/consultation" label="Register your interest" />
   </>;
 }
 
